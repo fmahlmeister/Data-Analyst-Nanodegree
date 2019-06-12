@@ -24,6 +24,6 @@ Learn the data wrangling process of gathering, assessing, and cleaning data. Lea
 ### Part 4: Data Visualization with Python
 Learn to apply visualization principles to the data analysis process. Explore data visually at multiple levels to find insights and create a compelling story.
 
-- Project: [Communicate Data Findings]()
+- Project: [Communicate Data Findings](https://github.com/fmahlmeister/Data-Analyst-Nanodegree/blob/master/4.Data-Visualization-with-Python/5.Communicate-Data-Findings.ipynb)
 
 ![Udacity Predictive Analytics for Business Nanodegree](https://drive.google.com/uc?export=view&id=131KpJqf0SQFzrH_KfcnpOReqSQhk9HVS)
