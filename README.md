@@ -14,7 +14,7 @@ Learn the data analysis process of wrangling, exploring, analyzing, and communic
 ### Part 2: Practical Statistics
 Learn how to apply inferential statistics and probability to real-world scenarios, such as analyzing A/B tests and building supervised learning models.
 
-- Project: [Analyze Experiment Results]()
+- Project: [Analyze Experiment Results](https://github.com/fmahlmeister/Data-Analyst-Nanodegree/blob/master/2.Practical-Statistics/2.Analyze-Experiment-Results.ipynb)
 
 ### Part 3: Data Wrangling
 Learn the data wrangling process of gathering, assessing, and cleaning data. Learn to use Python to wrangle data programmatically and prepare it for analysis.
