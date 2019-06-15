@@ -9,4 +9,5 @@ source/
 
 # ignore jupyter notebook checkpoints
 .ipynb_checkpoints/
-5.Communicate-Data-Findings-checkpoint.ipynb
+5.Communicate-Data-Findings-checkpoint.ipynb/
+1.Introduction-to-Data-Analysis/.ipynb_checkpoints/
