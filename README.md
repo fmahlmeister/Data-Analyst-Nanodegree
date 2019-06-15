@@ -19,7 +19,7 @@ Learn how to apply inferential statistics and probability to real-world scenario
 ### Part 3: Data Wrangling
 Learn the data wrangling process of gathering, assessing, and cleaning data. Learn to use Python to wrangle data programmatically and prepare it for analysis.
 
-- Project: [Wrangle and Analyze Data]()
+- Project: [Wrangle and Analyze Data](https://github.com/fmahlmeister/Data-Analyst-Nanodegree/blob/master/3.Data-Wrangling/3.Wrangle-and-Analyze-Data.ipynb)
 
 ### Part 4: Data Visualization with Python
 Learn to apply visualization principles to the data analysis process. Explore data visually at multiple levels to find insights and create a compelling story.
