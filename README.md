@@ -9,7 +9,7 @@ This repository contains projects for Udacity's [Data Analyst Nanodegree](https:
 Learn the data analysis process of wrangling, exploring, analyzing, and communicating data. Work with data in Python, using libraries like NumPy and Pandas.
 
 - Project: [Explore Weather Trends](https://github.com/fmahlmeister/Data-Analyst-Nanodegree/blob/master/1.Introduction-to-Data-Analysis/1.1.Explore-Weather-Trends.ipynb)
-- Project: [Investigate a Dataset]()
+- Project: [Investigate a Dataset](https://github.com/fmahlmeister/Data-Analyst-Nanodegree/blob/master/1.Introduction-to-Data-Analysis/1.2.Investigate-a-Dataset.ipynb)
 
 ### Part 2: Practical Statistics
 Learn how to apply inferential statistics and probability to real-world scenarios, such as analyzing A/B tests and building supervised learning models.
