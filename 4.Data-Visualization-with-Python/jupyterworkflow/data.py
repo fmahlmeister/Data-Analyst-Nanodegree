@@ -1,19 +1,26 @@
-def get_url(start_year, end_year):
+# Import packages
+import pandas as pd
+import os
+import time
+import requests
+import bz2
+
+def get_url(start_year=1987, last_year=2008):
 
     """
     Create url list and filepath list
 
     Parameters
     ----------
-    start_year : int
+    start_year : int (optional)
         the first year to start the download range
-    end_year : int
+    last_year : int (optional)
         the last year to end the download range
 
     Returns
     ----------
     url : list of str
-        List with complete url from the start_year to end_year
+        List with complete url from the start_year to last_year
     filepath : list of str
         List with the complete filepath where files will be downloaded
     """
@@ -21,7 +28,7 @@ def get_url(start_year, end_year):
     # Create lists
     url, filepath = [], []
     
-    for year in range(start_year,end_year+1):
+    for year in range(start_year,last_year+1):
     
         # Create full url string
         url_str = 'http://stat-computing.org/dataexpo/2009/'+str(year)+'.csv.bz2'
@@ -49,7 +56,7 @@ def get_download_and_unzip(filepath, url, force_download=False):
     Parameters
     ----------
     url : list of str
-        List with complete url from the start_year to end_year
+        List with complete url from the start_year to last_year
     filepath : list of str
         List with the complete filepath where files will be downloaded
     force_download : bool (opitional)
@@ -66,12 +73,6 @@ def get_download_and_unzip(filepath, url, force_download=False):
     u_end_l : list of time float
         List with unzip end time of each bz2 file
     """
-
-    # Import packages used on this function
-    import os
-    import time
-    import requests
-    import bz2
     
     # Dictionary
     # download_start_time_list = d_start_l
@@ -137,7 +138,7 @@ def get_flights_data(url, filepath):
     Parameters
     ----------
     url : list of str
-        List with complete url from the start_year to end_year
+        List with complete url from the start_year to last_year
     filepath : list of str
         List with the complete filepath where files will be downloaded
 
@@ -145,9 +146,7 @@ def get_flights_data(url, filepath):
     ----------
 
     """
-
-    import os
-    
+   
     total_d_start_l, total_d_end_l = [], []
     total_u_start_l, total_u_end_l = [], []
     total_d_diff_l, total_u_diff_l = [], []
@@ -199,3 +198,48 @@ def get_flights_data(url, filepath):
         statinfo.append(file_gb)
 
     print('total size of downloaded files:','{:0.2f}'.format(sum(statinfo)),'GB')
+
+
+def get_column_types(df,cols_of_interest):
+
+    """
+    Get optimized column types of the DataFrame as dictionary
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Empty DataFrame to initiate the function
+    cols_of_interest : list of str
+        List with only columns of interest
+
+    Returns
+    ----------
+    column_types : dict of str:str
+        Dictionary with column names and optimized column types
+
+    """
+
+    df = pd.read_csv('source/2008.csv', usecols = cols_of_interest, nrows=20)
+
+    # Now, with the knowledge of the data,
+    # we should declare the optimized datatype for the right columns:
+    # df.loc[:,'Year'] = pd.to_numeric(df.loc[:,'Year'], downcast='integer', errors='coerce')
+    # df.loc[:,'Month'] = pd.to_numeric(df.loc[:,'Month'], downcast='integer', errors='coerce')
+    # df.loc[:,'DayofMonth'] = pd.to_numeric(df.loc[:,'DayofMonth'], downcast='integer', errors='coerce')
+    # df.loc[:,'DayOfWeek'] = pd.to_numeric(df.loc[:,'DayOfWeek'], downcast='integer', errors='coerce')
+    df.loc[:,'UniqueCarrier'] = df.loc[:,'UniqueCarrier'].astype('category', errors='ignore')
+    # df.loc[:,'FlightNum'] = pd.to_numeric(df.loc[:,'FlightNum'], downcast='integer', errors='coerce')
+    df.loc[:,'TailNum'] = df.loc[:,'TailNum'].astype('category', errors='ignore')
+    df.loc[:,'Origin'] = df.loc[:,'Origin'].astype('category', errors='ignore')
+    df.loc[:,'Dest'] = df.loc[:,'Dest'].astype('category', errors='ignore')
+    # df.loc[:,'Distance'] = pd.to_numeric(df.loc[:,'Distance'], downcast='integer', errors='coerce')
+
+    # create the dict of index names and optimized datatypes
+    dtypes = df.dtypes
+
+    colnames = dtypes.index
+    types = [i.name for i in dtypes.values]
+
+    column_types = dict(zip(colnames, types))
+
+    return column_types
