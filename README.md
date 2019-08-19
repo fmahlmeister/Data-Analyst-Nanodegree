@@ -26,4 +26,4 @@ Learn to apply visualization principles to the data analysis process. Explore da
 
 - Project: [Communicate Data Findings](https://github.com/fmahlmeister/Data-Analyst-Nanodegree/blob/master/4.Data-Visualization-with-Python/4.Communicate-Data-Findings.ipynb)
 
-![Udacity Predictive Analytics for Business Nanodegree](https://drive.google.com/uc?export=view&id=131KpJqf0SQFzrH_KfcnpOReqSQhk9HVS)
+![Udacity Data Analyst Nanodegree](https://drive.google.com/open?id=1uQ8QXsERHR5Et82I0n5rQCY0GTnFLI8Y)
